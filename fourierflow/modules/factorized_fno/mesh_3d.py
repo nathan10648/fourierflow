@@ -170,8 +170,8 @@ class FNOFactorizedMesh3D(nn.Module):
             b, _ = layer(x)
             x = x + b
 
-        b = b[..., :-self.padding, :-self.padding, :-self.padding, :]
-        output = self.out(b)
+        x = x[..., :-self.padding, :-self.padding, :-self.padding, :]
+        output = self.out(x)
 
         return output
 
